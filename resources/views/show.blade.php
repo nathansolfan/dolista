@@ -1,1 +1,2 @@
-$
+<p>{{$task->title}}</p>
+<p> {{$task->description}} </p>
