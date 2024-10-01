@@ -11,5 +11,18 @@
     <a href="/create">Create me</a>
     <a href=" {{route('tasks.create')}} ">Route me</a>
 
+
+
+    @if ($tasks->isEmpty())
+    <p>No tasks</p>
+    @else
+
+
+    @foreach ( $tasks as $task )
+    <p> {{ $task->description}} </p>
+
+    @endforeach
+    @endif
+
 </body>
 </html>
