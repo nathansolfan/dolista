@@ -7,7 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <p>hello</p>
+    <h1>Edit</h1>
+    <form action=" {{ route('tasks.update', $task->id)}}" method="POST">
+        @csrf
+        <div>
+            <label for="">Title</label>
+            <input type="text" name="title" id="title" value="{{ old('title')}} ">
+        </div>
+
+        <div>
+            <label for="">Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <button type="input">Click me</button>
+    </form>
 
 </body>
 </html>

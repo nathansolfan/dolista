@@ -14,7 +14,7 @@
     @foreach ( $tasks as $task )
     <p> {{ $task->title }} </p>
     <p> {{ $task->description}} </p>
-    <a href=" {{route('tasks.edit', $task->id)}} ">Edit me</a>
+    <a href=" {{route('tasks.edit', $task->id)}}" class="underline">Edit me</a>
 
     @endforeach
     @endif
