@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <p>hello</p>
+
+    {{ $slot}}
 
 </body>
 </html>
