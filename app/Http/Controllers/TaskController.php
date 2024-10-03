@@ -71,6 +71,8 @@ class TaskController extends Controller
 
         $task = Task::findOrFail($id);
         $task->update($response);
+
+        return redirect()->route('tasks.index');
     }
 
     /**
