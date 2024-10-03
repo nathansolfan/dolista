@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-bold underline">
         Hello world!
       </h1>
-    <a href="/create">Create me</a>
+    <a href="/create" class="text-blue-500 hover:text-blue-700 font-semibold">Create me</a>
     <a href=" {{route('tasks.create')}} ">Route me</a>
 
     @if ($tasks->isEmpty())
