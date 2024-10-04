@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Create me</h1>
+<x-layout>
+
+    <h1 class="flex flex-col items-center">Create me</h1>
     <form action=" {{ route('tasks.store')}}" method="POST">
         @csrf
         <div>
@@ -21,6 +14,4 @@
         </div>
         <button type="input">Click me</button>
     </form>
-
-</body>
-</html>
+</x-layout>
