@@ -64,12 +64,20 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $task = Task::findOrFail($id);
+
+        if ($request->has('completed')) {
+            $task->completed = !$task->completed;
+            $task->save;
+            return redirect()->route('tasks.index')->with('success', 'Task status updated');
+        }
+
         $response = $request->validate([
             'title' => 'string|required',
             'description' => 'string|required',
         ]);
 
-        $task = Task::findOrFail($id);
+
         $task->update($response);
 
         return redirect()->route('tasks.index');
@@ -86,12 +94,12 @@ class TaskController extends Controller
         return redirect()->route('tasks.index');
     }
 
-    public function toggleComplete(string $id)
-    {
-        $task = Task::findOrFail($id);
-        $task->completed = !$task->completed;
-        $task->save();
+    // public function toggleComplete(string $id)
+    // {
+    //     $task = Task::findOrFail($id);
+    //     $task->completed = !$task->completed;
+    //     $task->save();
 
-        return redirect()->route('tasks.index')->with('success', 'Task status updated');
-    }
+    //     return redirect()->route('tasks.index')->with('success', 'Task status updated');
+    // }
 }
