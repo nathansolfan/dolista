@@ -46,7 +46,7 @@ class TaskController extends Controller
     {
         $task = Task::findOrFail($id);
         // associate array, where 'task' is the key and $task the value
-        return view('tasks.show', ['task' => $task]);
+        return view('show', ['task' => $task]);
     }
 
     /**
