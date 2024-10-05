@@ -36,7 +36,7 @@ class TaskController extends Controller
         // dd($response);
 
         Task::create($response);
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'task created');
     }
 
     /**
@@ -83,6 +83,6 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
         $task->delete();
 
-        return redirect()->route('tasks.create');
+        return redirect()->route('tasks.index');
     }
 }

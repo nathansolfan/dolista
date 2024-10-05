@@ -9,6 +9,13 @@
             </a>
         </div>
 
+        {{-- success msg --}}
+    @if (session('success'))
+    <div class="">
+        {{ session('success')}}
+    </div>
+    @endif
+
         @if ($tasks->isEmpty())
             <p class="text-gray-500">No tasks available. Start by creating one!</p>
         @else
