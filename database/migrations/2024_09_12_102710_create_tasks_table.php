@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            // Add the completed column
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
     }
