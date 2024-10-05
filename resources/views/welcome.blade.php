@@ -28,6 +28,7 @@
                             <a href="{{ route('tasks.edit', $task->id) }}" class="text-indigo-600 hover:underline">
                                 Edit
                             </a>
+                            <a href=" {{ route('tasks.show', $task->id)}}" class="text-green-600 hover:underline">Show</a>
                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
