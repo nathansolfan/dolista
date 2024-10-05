@@ -25,6 +25,16 @@
                         <h2 class="text-xl font-semibold text-blue-500">{{ $task->title }}</h2>
                         <p class="text-gray-700 mb-2">{{ $task->description }}</p>
                         <div class="flex space-x-4">
+
+                            {{-- TOGGLE COMPLETED STATUS --}}
+                            <form action=" {{route('tasks.complete', $task->id)}}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit">
+                                    {{ $task->completed ? 'Mark as Incomplete' : 'Mark as Done'}}
+                                </button>
+                            </form>
+
                             <a href="{{ route('tasks.edit', $task->id) }}" class="text-indigo-600 hover:underline">
                                 Edit
                             </a>
