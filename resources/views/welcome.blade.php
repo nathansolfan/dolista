@@ -38,7 +38,7 @@
                                 @method('PUT')
                                 <input type="hidden" name="completed" value="1">
                                 <button type="submit" class="text-green-600 hover:underline">
-                                    {{ $task->completed ? 'Mark as Incomplete' : 'Mark as Done' }}
+                                    {{ $task->completed ? 'Incomplete' : 'Complete' }}
                                 </button>
                             </form>
 
@@ -54,11 +54,23 @@
                                 @method('DELETE')
                                 <button type="submit" class="text-red-600 hover:underline">Delete</button>
                             </form>
+                            {{-- PRIORITY --}}
+                            <div>
+                                @if ($task->priority === 1)
+                                <span>Priority: Low</span>
+                                @elseif ($task->priority === 2)
+                                <span>Priority: Medium</span>
+                                @elseif ($task->priority === 3)
+                                <span>Priority: High</span>
+
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                 @endforeach
                 {{-- PAGINATE --}}
-                <div class="mt-4">
+                <div class="">
                     {{ $tasks->links() }}
                 </div>
             </div>
