@@ -75,7 +75,7 @@ class TaskController extends Controller
             if ($task->completed) {
                 return redirect()->route('tasks.index')->with('success', 'Task status updated');
             } else {
-                return redirect()->route('tasks.index')->with('success', 'Task status not updated');
+                return redirect()->route('tasks.index')->with('error', 'Task status not updated');
             }
         }
 
