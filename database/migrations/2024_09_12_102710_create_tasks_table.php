@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('description');
             // Add the completed column
             $table->boolean('completed')->default(false);
+            // new INTEGER table for priority where 1 - low is default
+            $table->integer('priority')->default(1);
             $table->timestamps();
         });
     }
