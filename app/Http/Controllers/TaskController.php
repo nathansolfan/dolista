@@ -12,7 +12,10 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        // Task::all() not needed since paginate is being used
+        // $tasks = Task::all();
+        $tasks = Task::paginate(2);
+
         return view('welcome',['tasks' => $tasks]);
     }
 

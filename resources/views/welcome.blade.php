@@ -20,9 +20,6 @@
         @endif
 
 
-
-
-
         @if ($tasks->isEmpty())
             <p class="text-gray-500">No tasks available. Start by creating one!</p>
         @else
@@ -60,6 +57,10 @@
                         </div>
                     </div>
                 @endforeach
+                {{-- PAGINATE --}}
+                <div class="mt-4">
+                    {{ $tasks->links() }}
+                </div>
             </div>
         @endif
     </div>
