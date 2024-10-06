@@ -13,8 +13,9 @@ class TaskController extends Controller
     public function index()
     {
         // Task::all() not needed since paginate is being used
-        // $tasks = Task::all();
-        $tasks = Task::paginate(2);
+        // 1ST= $tasks = Task::all().2ND= $tasks = Task::paginate(2);
+
+        $tasks = Task::orderBy('priority', 'asc')->paginate(2);
 
         return view('welcome',['tasks' => $tasks]);
     }
