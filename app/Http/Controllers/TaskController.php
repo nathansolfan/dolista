@@ -73,7 +73,6 @@ class TaskController extends Controller
 
         if ($request->has('completed')) {
             // Check if the task's completion status is being changed
-            $previousStatus = $task->completed;
             $task->completed = !$task->completed;
             $task->save();
 
@@ -87,6 +86,7 @@ class TaskController extends Controller
         $response = $request->validate([
             'title' => 'string|required',
             'description' => 'string|required',
+            'priority' => 'required|integer|in:1,2,3'
         ]);
 
 

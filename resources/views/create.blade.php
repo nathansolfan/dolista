@@ -26,6 +26,16 @@
             <label for="">Description:</label>
             <input type="text" name="description" id="description" placeholder="Enter description" class="mt-1 py-2 px-3 border border-gray-300 rounded-md shadow-sm">
         </div>
+
+        {{-- PRIORITY --}}
+        <div>
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority" class="border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ">
+                <option value="1" {{ old('priority') == 1 ? 'selected' : '' }} >Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+        </div>
         <button type="submit"
         class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >Click me</button>
