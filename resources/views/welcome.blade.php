@@ -63,8 +63,8 @@
                                 <label for="priority">Priority:</label>
                                 <select name="priority" id="priority" onchange="this.form.submit()" class="border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                     <option value="1" {{ old('priority') == 1 ? 'selected' : '' }} >Low</option>
-                                    <option value="2">Medium</option>
-                                    <option value="3">High</option>
+                                    <option value="2" {{ old('priority') == 2 ? 'selected' : '' }} >Medium</option>
+                                    <option value="3" {{ old('priority') == 3 ? 'selected' : '' }} >High</option>
                                 </select>
 
                         </form>

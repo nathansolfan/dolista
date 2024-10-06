@@ -39,6 +39,8 @@ class TaskController extends Controller
             'priority' => 'integer|required|in:1,2,3'
         ]);
         // dd($response);
+        // dd($request->all());
+
 
         Task::create($response);
         return redirect()->route('tasks.index')->with('success', 'Task Created');
