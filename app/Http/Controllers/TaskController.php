@@ -36,6 +36,7 @@ class TaskController extends Controller
         $response = $request->validate([
             'title' => 'required|string',
             'description' => 'required|string',
+            'priority' => 'integer|required|in:1,2,3'
         ]);
         // dd($response);
 

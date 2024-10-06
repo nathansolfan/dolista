@@ -56,14 +56,6 @@
                             </form>
                             {{-- PRIORITY --}}
                             <div>
-                                {{-- @if ($task->priority === 1)
-                                <span>Priority: Low</span>
-                                @elseif ($task->priority === 2)
-                                <span>Priority: Medium</span>
-                                @elseif ($task->priority === 3)
-                                <span>Priority: High</span>
-                                @endif --}}
-
                                 <label for="priority">Priority:</label>
                                 <select name="priority" id="priority" class="border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ">
                                     <option value="1" {{ old('priority') == 1 ? 'selected' : '' }} >Low</option>
@@ -83,3 +75,12 @@
         @endif
     </div>
 </x-layout>
+
+
+{{-- @if ($task->priority === 1)
+                                <span>Priority: Low</span>
+                                @elseif ($task->priority === 2)
+                                <span>Priority: Medium</span>
+                                @elseif ($task->priority === 3)
+                                <span>Priority: High</span>
+                                @endif --}}
