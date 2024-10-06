@@ -67,9 +67,16 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
 
         if ($request->has('completed')) {
+            // Check if the task's completion status is being changed
+            $previousStatus = $task->completed;
             $task->completed = !$task->completed;
             $task->save();
-            return redirect()->route('tasks.index')->with('success', 'Task status updated');
+
+            if ($task->completed) {
+                return redirect()->route('tasks.index')->with('success', 'Task status updated');
+            } else {
+                return redirect()->route('tasks.index')->with('success', 'Task status not updated');
+            }
         }
 
         $response = $request->validate([
@@ -80,7 +87,7 @@ class TaskController extends Controller
 
         $task->update($response);
 
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Task updated');
     }
 
     /**
